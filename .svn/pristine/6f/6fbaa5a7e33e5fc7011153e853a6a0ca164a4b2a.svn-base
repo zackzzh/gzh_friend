@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Expires" content="0" />
+    <title>首页</title>
+    <link rel="stylesheet" href="./css/index/index.css" />
+    <link href="./iconfont/iconfont.css" rel="stylesheet">
+    <link href='./vant/index.css' rel='stylesheet'>
+    <script src='./vue/vue.js'></script>
+    <script src='./vant/vant.min.js'></script>
+    <script src="./config/flexible.js"></script>
+</head>
+
+<body>
+    <div id="friend" class="page" v-cloak>
+        <van-nav-bar title="众帮社交平台" :fixed="true"
+            style="background:linear-gradient(94deg,rgba(246,211,101,1),rgba(253,160,133,1)); color:#fff;">
+        </van-nav-bar>
+        <!-- 头部搜索 -->
+
+        <div class="index_search" style="margin-top:46px;">
+            <div style="display: flex; align-items: center;">
+                <van-image width=".76rem" height=".706667rem" src="./img/index_search_left.png"></van-image>
+                <span style="margin-left:.213333rem; font-size: .426667rem; color: #FC853E;">众帮社交</span>
+            </div>
+            <div>
+                <van-field v-model="value" placeholder="请输入单身者姓名" right-icon="search" @click-right-icon="search">
+                </van-field>
+            </div>
+            <van-image src="./img/index_search_right.png" width=".48rem" height=".48rem" @click="toNotice"></van-image>
+        </div>
+        <div class="index">
+            <!-- banner -->
+            <div class="index_banner">
+                <van-swipe>
+                    <van-swipe-item v-for="(image, index) in bannerList" :key="index">
+                        <van-image width="9.333333rem" height="3.92rem" :src="image.picUrl"></van-image>
+                    </van-swipe-item>
+                </van-swipe>
+            </div>
+            <!-- 推荐列表 -->
+            <div class="index_list">
+                <div class="list_top">
+                    <div class="top_left">
+                        <span class="left_line">|</span>
+                        <span>推荐</span>
+                    </div>
+                    <van-icon name="ellipsis" @click="toSquare"></van-icon>
+                </div>
+                <van-row gutter="10">
+                    <van-col :span="12" v-for="(item,index) in userList">
+                        <div @click="toInfo(item)">
+                            <van-image width="100%" height="3.2rem" :src="item.picHead"></van-image>
+                            <div class="van_col_name">
+                                {{item.realName}}
+                            </div>
+                            <div class="van_col_buttom">
+                                {{item.age}}岁 {{item.cityWork}} {{item.heightMan}}cm {{item.education}}
+                                {{item.incomeMonth}}
+                            </div>
+                        </div>
+                    </van-col>
+                </van-row>
+            </div>
+        </div>
+        <div class="nav_bar">
+            <van-image src="./img/bav_bg.png"></van-image>
+            <div class="nav_list">
+                <div class="nav_item" style="margin-left:1.65rem;" @click="nav(1)">
+                    <van-image width=".666667rem" height=".666667rem" src="./img/nav_1_active.png"></van-image>
+                    <span :class="{'active':active==1}">首页</span>
+                </div>
+                <div class="nav_item" style="margin-left:2rem;" @click="nav(2)">
+                    <van-image width=".986667rem" height=".986667rem" src="./img/nav_2.png"></van-image>
+                    <span :class="{'active':active==2}">单身广场</span>
+                </div>
+                <div class="nav_item" style="margin-left:1.866667rem;" @click="nav(3)">
+                    <van-image width=".573333rem" height=".68rem" src="./img/nav_3.png"></van-image>
+                    <span :class="{'active':active==3}">个人中心</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./api/axios.min.js"></script>
+    <script src="./api/index.js"></script>
+    <script src="./api/api.js"></script>
+    <script src="./config/routers.js"></script>
+    <script src="./js/index/index.js"></script>
+</body>
+
+</html>

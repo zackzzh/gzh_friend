@@ -1,0 +1,39 @@
+html {
+  background: #f7f7f7 !important;
+  align-items: center;
+  flex: 1;
+  height: 100%;
+}
+html [v-cloak] {
+  display: none;
+}
+.page {
+  padding-bottom: 1.6rem;
+  height: 100%;
+}
+.van-nav-bar__title {
+  color: #fff !important;
+}
+.van-nav-bar .van-icon {
+  color: #fff !important;
+}
+.apply_list .apply_item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 0.266667rem 0.4rem;
+}
+.apply_list .apply_item .left {
+  display: flex;
+  align-items: center;
+  font-size: 0.4rem;
+}
+.apply_list .apply_item .left .van-image {
+  margin-right: 0.266667rem;
+}
+.apply_list .apply_item .right {
+  font-size: 0.346667rem;
+  color: #999;
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Expires" content="0" />
+    <title>注册</title>
+    <link rel="stylesheet" href="./css/register/index.css" />
+    <link href="./iconfont/iconfont.css" rel="stylesheet">
+    <link href='./vant/index.css' rel='stylesheet'>
+    <script src='./vue/vue.js'></script>
+    <script src='./vant/vant.min.js'></script>
+    <script src="./config/flexible.js"></script>
+</head>
+
+<body>
+    <div id="friend" class="page" v-cloak>
+        <van-nav-bar title="注册" :fixed="true" left-arrow @click-left="onClickLeft"></van-nav-bar>
+        <!-- 表单提交 -->
+        <van-cell-group style="margin:0 1.186667rem;margin-top: 2.4rem;">
+            <van-field v-model="form.userName" placeholder="请输入用户名"></van-field>
+            <van-field v-model="form.mobile" placeholder="请输入手机号" type="tel" clearable @blur="mobile_blur"></van-field>
+            <van-field v-model="form.msgCode" center clearable placeholder="请输入验证码">
+                <van-button slot="button" size="small" type="primary" class="button" @click="sendMsg"
+                    :disabled="sendActive">{{msgText}}</van-button>
+            </van-field>
+            <van-field v-model="form.password" placeholder="请输入密码" right-icon="browsing-history-o"
+                :type="showPassword?'text':'password'" @click-right-icon="eye">
+            </van-field>
+        </van-cell-group>
+        <div class="service">
+            注册即同意 <span style="color: #FF7491;">《服务协议》</span>
+        </div>
+        <!-- 注册 -->
+        <van-image width="7.68rem" height="1.013333rem" src="./img/register_confirm.png"
+            style="margin-left: 1.146667rem;" @click="confirm">
+        </van-image>
+    </div>
+    <script src="./api/axios.min.js"></script>
+    <script src="./api/index.js"></script>
+    <script src="./api/api.js"></script>
+    <script src="./config/routers.js"></script>
+    <script src="./js/register/index.js"></script>
+</body>
+
+</html>

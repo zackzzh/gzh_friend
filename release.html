@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Expires" content="0" />
+    <title>我要发布</title>
+    <link rel="stylesheet" href="./css/release/index.css" />
+    <link href="./iconfont/iconfont.css" rel="stylesheet">
+    <link href='./vant/index.css' rel='stylesheet'>
+    <script src='./vue/vue.js'></script>
+    <script src='./vant/vant.min.js'></script>
+    <script src="./config/flexible.js"></script>
+</head>
+
+<body>
+    <div id="friend" class="page" v-cloak>
+        <van-nav-bar title="我要发布" :fixed="true" left-arrow @click-left="onClickLeft"
+            style="background:linear-gradient(94deg,rgba(246,211,101,1),rgba(253,160,133,1)); color:#fff;">
+        </van-nav-bar>
+        <!-- 头部搜索 -->
+        <div class="release" style="margin-top:46px;">
+            <!-- 个人信息填写 -->
+            <van-cell-group>
+                <van-cell title="姓名" class="cell-input">
+                    <van-field slot="default" v-model="form.realName" placeholder="请输入单身者姓名"></van-field>
+                </van-cell>
+                <van-cell title="身高" class="cell-input">
+                    <van-field slot="default" v-model="form.heightMan" placeholder="请输入单身者身高（单位cm）"></van-field>
+                </van-cell>
+                <van-cell title="出生日期" :value="birthText" is-link arrow-direction="down" @click="is_birthbay=true">
+                </van-cell>
+                <van-cell title="性别" :value="sexText" is-link arrow-direction="down" @click="is_sex=true"></van-cell>
+                <van-cell title="联系方式管理" :value="statusText" is-link arrow-direction="down" @click="is_status=true">
+                </van-cell>
+                <van-cell title="学历" :value="educationText" is-link arrow-direction="down" @click="is_education=true">
+                </van-cell>
+                <van-cell title="月收入" :value="incomeMonthText" is-link arrow-direction="down"
+                    @click="is_incomeMonth=true">
+                </van-cell>
+                <van-cell title="手机号" class="cell-input">
+                    <van-field slot="default" v-model="form.telephone" placeholder="请输入手机号"></van-field>
+                </van-cell>
+                <van-cell title="微信号" class="cell-input">
+                    <van-field slot="default" v-model="form.wechatNumber" placeholder="请输入微信号"></van-field>
+                </van-cell>
+                <van-cell title="工作地区" :value="workAreaText" is-link arrow-direction="down" @click="is_work_area=true">
+                </van-cell>
+                <van-cell title="出生地" :value="birthAreaText" is-link arrow-direction="down" @click="is_birth_area=true">
+                </van-cell>
+                <van-cell title="私隐设置" class="cell-input">
+                    <van-field slot="default" v-model="form.viewPassword" placeholder="请输入密码"></van-field>
+                </van-cell>
+                <div class="order_upload">
+                    <div class="upload_top">上传相册 (最多九张)</div>
+                    <div class="upload_img">
+                        <template v-if="picUrl && picUrl.length>0 && showPicUrl">
+                            <van-image style="margin-right: .266667rem;" width="2.08rem" height="2.08rem" fit="contain"
+                                v-for="(item,index) in picUrl" :src="item">
+                            </van-image>
+                        </template>
+                        <van-uploader v-model="fileListPicUrl" multiple :max-count="9" :after-read="afterReadPicUrl">
+                            <van-image class="commodity_img" slot="thumb" fit="contain" width="1.346667rem"
+                                height="1.346667rem" src="./img/release_upload.png">
+                            </van-image>
+                        </van-uploader>
+                    </div>
+                </div>
+                <div class="order_upload">
+                    <div class="upload_top">上传封面</div>
+                    <div class="upload_img">
+                        <van-image style="margin-right: .266667rem;" v-if="picHead.length>0 && showPicHead"
+                            width="2.08rem" fit="contain" height="2.08rem" :src="picHead">
+                        </van-image>
+                        <van-uploader v-model="fileListPicHead" :after-read="afterReadPicHead">
+                            <van-image class="commodity_img" slot="thumb" fit="contain" width="1.346667rem"
+                                height="1.346667rem" src="./img/release_upload.png">
+                            </van-image>
+                        </van-uploader>
+                    </div>
+                </div>
+                <van-cell title="您与单身者的关系" :value="relationText" is-link arrow-direction="down"
+                    @click="is_relation=true">
+                </van-cell>
+                <van-cell title="个性签名" class="cell-input">
+                    <van-field slot="default" v-model="form.autograph" placeholder="请输入个性签名" rows="1" autosize
+                        type="textarea"></van-field>
+                </van-cell>
+            </van-cell-group>
+            <van-button v-if="id" size="small" type="primary" class="button" @click="updateInfo">更新信息
+            </van-button>
+            <van-image v-else width="2.533333rem" height="1.173333rem" src="./img/release_confirm.png"
+                class="confirm-btn" @click="confirm">
+            </van-image>
+        </div>
+        <!-- 出生日期弹窗 -->
+        <van-popup v-model="is_birthbay" position="bottom">
+            <van-datetime-picker v-model="currentDate" :min-date="minDate" type="date" @confirm="confirm_birthbay"
+                @cancel="is_birthbay=false" :max-date="maxDate">
+            </van-datetime-picker>
+        </van-popup>
+        <!-- 性别弹窗 -->
+        <van-popup v-model="is_sex" position="bottom">
+            <van-picker show-toolbar :columns="sexColumns" @cancel="is_sex = false" @confirm="onConfirmSex"
+                value-key="name">
+            </van-picker>
+        </van-popup>
+        <!-- 联系方式管理弹窗 -->
+        <van-popup v-model="is_status" position="bottom">
+            <van-picker show-toolbar :columns="statusColumns" @cancel="is_status = false" @confirm="onConfirmStatus"
+                value-key="name">
+            </van-picker>
+        </van-popup>
+        <!-- 学历弹窗 -->
+        <van-popup v-model="is_education" position="bottom">
+            <van-picker show-toolbar :columns="educationColumns" @cancel="is_education = false"
+                @confirm="onConfirmEducation">
+            </van-picker>
+        </van-popup>
+        <!-- 收入区间弹窗 -->
+        <van-popup v-model="is_incomeMonth" position="bottom">
+            <van-picker show-toolbar :columns="incomeMonthColumns" @cancel="is_incomeMonth = false"
+                @confirm="onConfirmIncomeMonth">
+            </van-picker>
+        </van-popup>
+        <!-- 工作地区弹窗 -->
+        <van-popup v-model="is_work_area" position="bottom" :style="{ height: 'auto' }">
+            <van-area @cancel="is_work_area=false" @confirm="onConfirmWorkArea" :area-list="areaList"></van-area>
+        </van-popup>
+        <!-- 出生地弹窗 -->
+        <van-popup v-model="is_birth_area" position="bottom" :style="{ height: 'auto' }">
+            <van-area @cancel="is_birth_area=false" @confirm="onConfirmBirthArea" :area-list="areaList"></van-area>
+        </van-popup>
+        <!-- 关系弹窗 -->
+        <van-popup v-model="is_relation" position="bottom">
+            <van-picker show-toolbar :columns="relationColumns" @cancel="is_relation = false"
+                @confirm="onConfirmRelation">
+            </van-picker>
+        </van-popup>
+    </div>
+    <script src="./config/area.js"></script>
+    <script src="./api/axios.min.js"></script>
+    <script src="./api/index.js"></script>
+    <script src="./api/api.js"></script>
+    <script src="./config/routers.js"></script>
+    <script src="./js/release/index.js"></script>
+</body>
+
+</html>

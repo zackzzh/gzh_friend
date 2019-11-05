@@ -1,0 +1,28 @@
+html {
+  background: #F7F7F7;
+  align-items: center;
+  flex: 1;
+  height: 100%;
+  overflow: hidden !important;
+}
+html [v-cloak] {
+  display: none;
+}
+.page {
+  padding-bottom: 1.6rem;
+  height: 100%;
+}
+.login_bg {
+  position: absolute;
+}
+.login_btn {
+  position: absolute;
+  left: 1.066667rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 1.386667rem;
+}
+.login_btn .van-image {
+  cursor: pointer;
+}

@@ -1,0 +1,70 @@
+html {
+  background: #F7F7F7 !important;
+  align-items: center;
+  flex: 1;
+  height: 100%;
+}
+html [v-cloak] {
+  display: none;
+}
+.page {
+  padding-bottom: 1.6rem;
+  height: 100%;
+}
+.van-nav-bar__title {
+  color: #fff !important;
+}
+.van-nav-bar .van-icon {
+  color: #fff !important;
+}
+.van-nav-bar .van-image {
+  position: relative;
+  top: 0.133333rem;
+}
+.my {
+  width: 9.426667rem;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 0.453333rem 0;
+}
+.my .my_info {
+  padding: 0 0.88rem;
+  margin-bottom: 0.666667rem;
+  display: flex;
+  align-items: center;
+}
+.my .my_info span {
+  font-size: 0.4rem;
+  font-weight: bold;
+}
+.my .left {
+  display: flex;
+  align-items: center;
+}
+.nav_bar {
+  position: fixed;
+  bottom: 0;
+  z-index: 100;
+}
+.nav_bar .nav_list {
+  position: absolute;
+  bottom: 3px;
+  z-index: 101;
+  display: flex;
+}
+.nav_bar .nav_list .nav_item {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+.nav_bar .nav_list .nav_item span {
+  font-size: 0.24rem;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: #fc853e;
+  opacity: 0.5;
+}
+.nav_bar .nav_list .active {
+  opacity: 1 !important;
+}

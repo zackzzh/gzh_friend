@@ -1,0 +1,123 @@
+html {
+  background: linear-gradient(180deg, rgba(255, 242, 255, 0.13), rgba(254, 233, 254, 0.13)) !important;
+  align-items: center;
+  flex: 1;
+  height: 100%;
+}
+html [v-cloak] {
+  display: none;
+}
+.page {
+  padding-bottom: 1.6rem;
+  height: 100%;
+  z-index: 2;
+}
+.van-nav-bar__title {
+  color: #fff !important;
+}
+.index_search {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 0.986667rem;
+  background: rgba(255, 226, 185, 0.23);
+  box-shadow: 0px 1px 2px 0px rgba(252, 169, 127, 0.34);
+  padding: 0 0.333333rem;
+}
+.index_search .van-cell {
+  background: transparent;
+}
+.index_search .van-icon-search {
+  color: #FC853E;
+  font-size: 0.533333rem !important;
+}
+.van-swipe {
+  width: 9.293333rem !important;
+  height: 3.906667rem !important;
+  margin: 0.266667rem auto;
+}
+.index_list {
+  width: 9.2rem;
+  margin: 0 auto;
+  background: #ffffff;
+  box-shadow: 0px 3px 8px 0px rgba(243, 212, 249, 0.6);
+  border-radius: 0.266667rem;
+  padding: 0.32rem;
+}
+.index_list .list_top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.32rem 0;
+}
+.index_list .list_top .van-icon-ellipsis {
+  font-size: 0.48rem !important;
+}
+.index_list .list_top .top_left {
+  color: rgba(252, 133, 62);
+}
+.index_list .list_top .top_left .left_line {
+  width: 0.026667rem;
+  height: 0.533333rem;
+  color: rgba(252, 133, 62);
+  background: #fc853e;
+  border-radius: 0.013333rem;
+}
+.index_list .van-col {
+  background: #ffffff;
+  border-radius: 0.266667rem;
+}
+.index_list .van-col .van_col_name {
+  position: absolute;
+  top: 2.4rem;
+  left: 0.666667rem;
+  z-index: 10;
+  color: #fff;
+  font-size: 0.386667rem;
+  font-family: PingFang SC;
+  font-weight: 500;
+}
+.index_list .van-col .van-image__img {
+  border-radius: 10px 10px 0px 0px;
+}
+.index_list .van-col .van_col_buttom {
+  min-height: 1.2rem;
+  border: 1px solid #e5e5e5;
+  position: relative;
+  top: -4px;
+  text-align: center;
+  border-radius: 0px 0px 10px 10px;
+  padding: 0.333333rem 0.4rem;
+  font-size: 0.306667rem;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #a3a3a3;
+  line-height: 0.48rem;
+}
+.nav_bar {
+  position: fixed;
+  bottom: 0;
+  z-index: 100;
+}
+.nav_bar .nav_list {
+  position: absolute;
+  bottom: 3px;
+  z-index: 101;
+  display: flex;
+}
+.nav_bar .nav_list .nav_item {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+.nav_bar .nav_list .nav_item span {
+  font-size: 0.24rem;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: #fc853e;
+  opacity: 0.5;
+}
+.nav_bar .nav_list .active {
+  opacity: 1 !important;
+}

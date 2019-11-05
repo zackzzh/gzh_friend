@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Expires" content="0" />
+    <title>发布历史</title>
+    <link rel="stylesheet" href="./css/release_history/index.css" />
+    <link href="./iconfont/iconfont.css" rel="stylesheet">
+    <link href='./vant/index.css' rel='stylesheet'>
+    <script src='./vue/vue.js'></script>
+    <script src='./vant/vant.min.js'></script>
+    <script src="./config/flexible.js"></script>
+</head>
+
+<body>
+    <div id="friend" class="page" v-cloak>
+        <van-nav-bar title="发布历史" :fixed="true" left-arrow @click-left="onClickLeft"
+            style="background:linear-gradient(94deg,rgba(246,211,101,1),rgba(253,160,133,1)); color:#fff;">
+        </van-nav-bar>
+        <!-- 历史列表 -->
+        <!-- <div class="release_history_select" style="margin-top:56px;">选择</div> -->
+        <div class="release_history" v-if="userDetailList && userDetailList.length>0" style="margin-top:56px;">
+            <van-cell-group>
+                <van-cell value="" is-link v-for="(item,index) in userDetailList" @click="toEdit(item)">
+                    <!-- 使用 title 插槽来自定义标题 -->
+                    <template slot="title">
+                        <van-image width="1.333333rem" height="1.333333rem" :src="item.picHead"></van-image>
+                        <span>{{item.realName}}</span>
+                        <div class="option_button">
+                            <span class="del" @click.stop="del(item)">删除</span>
+                            <span class="del" @click.stop="closeOrOpenDetail(0,item)" v-if="item.state=='1'">关闭</span>
+                            <span class="del" @click.stop="closeOrOpenDetail(1,item)" v-if="item.state=='0'">开启</span>
+                        </div>
+                    </template>
+                </van-cell>
+            </van-cell-group>
+        </div>
+    </div>
+    <script src="./api/axios.min.js"></script>
+    <script src="./api/index.js"></script>
+    <script src="./api/api.js"></script>
+    <script src="./config/routers.js"></script>
+    <script src="./js/release_history/index.js"></script>
+</body>
+
+</html>

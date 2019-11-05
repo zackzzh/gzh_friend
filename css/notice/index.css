@@ -1,0 +1,40 @@
+html {
+  background: #f7f7f7 !important;
+  align-items: center;
+  flex: 1;
+  height: 100%;
+}
+html [v-cloak] {
+  display: none;
+}
+.page {
+  padding-bottom: 1.6rem;
+  height: 100%;
+}
+.van-nav-bar__title {
+  color: #fff !important;
+}
+.van-nav-bar .van-icon {
+  color: #fff !important;
+}
+.van-cell__value {
+  flex: none !important;
+  width: 3.733333rem !important;
+  flex-shrink: 0;
+  font-size: 0.293333rem;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #333333;
+}
+.van-cell__title {
+  text-indent: 0.266667rem;
+}
+.dian {
+  font-size: 1.333333rem;
+  font-family: PingFang SC;
+  font-weight: 500;
+  position: absolute;
+  left: 3px;
+  top: 8px;
+  color: #ff0000;
+}

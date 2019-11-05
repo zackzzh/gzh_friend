@@ -1,0 +1,86 @@
+html {
+    background : #F7F7F7 !important;
+    align-items: center;
+    flex       : 1;
+    height     : 100%;
+
+    [v-cloak] {
+        display: none;
+    }
+}
+
+.page {
+    padding-bottom: 1.6rem;
+    height        : 100%;
+}
+
+
+.van-nav-bar__title {
+    color: #fff !important;
+}
+
+.van-nav-bar .van-icon {
+    color: #fff !important;
+}
+
+
+.van-nav-bar .van-image {
+    position: relative;
+    top     : .133333rem;
+}
+
+.my {
+    width     : 9.426667rem;
+    margin    : 0 auto;
+    background: rgba(255, 255, 255, 1);
+    padding   : .453333rem 0;
+
+    .my_info {
+        padding      : 0 .88rem;
+        margin-bottom: .666667rem;
+        display      : flex;
+        align-items  : center;
+
+        span {
+            font-size  : .4rem;
+            font-weight: bold;
+        }
+    }
+
+    .left {
+        display    : flex;
+        align-items: center;
+    }
+}
+
+.nav_bar {
+    position: fixed;
+    bottom  : 0;
+    z-index : 100;
+
+    .nav_list {
+        position: absolute;
+        bottom  : 3px;
+        z-index : 101;
+        display : flex;
+
+        .nav_item {
+            display        : flex;
+            flex-direction : column;
+            justify-content: flex-end;
+            align-items    : center;
+
+            span {
+                font-size  : .24rem;
+                font-family: PingFang SC;
+                font-weight: bold;
+                color      : rgba(252, 133, 62, 1);
+                opacity    : 0.5;
+            }
+        }
+
+        .active {
+            opacity: 1 !important;
+        }
+    }
+}

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Expires" content="0" />
+    <title>详情</title>
+    <link rel="stylesheet" href="./css/info/index.css" />
+    <link href="./iconfont/iconfont.css" rel="stylesheet">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1488195_445cf3pq92.css">
+    <link href='./vant/index.css' rel='stylesheet'>
+    <script src='./vue/vue.js'></script>
+    <script src='./vant/vant.min.js'></script>
+    <script src="./config/flexible.js"></script>
+</head>
+
+<body>
+    <div id="friend" class="page" v-cloak>
+        <van-nav-bar :title="userDetail.realName" :fixed="true" left-arrow @click-left="onClickLeft"
+            style="background:linear-gradient(94deg,rgba(246,211,101,1),rgba(253,160,133,1)); color:#fff;">
+            <van-icon name="records" slot="right" @click="toEdit" style="font-size:20px;"></van-icon>
+        </van-nav-bar>
+        <div class="info" style="margin-top:46px;">
+            <!-- 封面头部 -->
+            <div class="info_pichead">
+                <van-image width="10rem" height="6rem" :src="userDetail.picHead"></van-image>
+                <div class="head_top">
+                    <span>注册分享身边的单身信息，与您的亲友帮其脱单</span>
+                    <span style="margin-right: 16px;">
+                        <van-icon name="cross"></van-icon>
+                    </span>
+                </div>
+                <div class="head_bottom">
+                    <div class="head_name">
+                        {{userDetail.realName}}
+                    </div>
+                    <div class="head_age">
+                        <div class="age">
+                            <i class="iconfont icon-xingbienan" style="font-size: 12px;" v-if="userDetail.sex=='1'"></i>
+                            <i class="iconfont icon-xingbienvxianxing" style="font-size: 12px;"
+                                v-if="userDetail.sex=='2'"></i>
+                            <span style="margin-left: 3px;">{{userDetail.age}}</span>
+                        </div>
+                        <div class="birth">{{userDetail.provinceBirth}}</div>
+                    </div>
+                    <div class="head_detail">
+                        <div class="detail_left">
+                            {{userDetail.autograph}}
+                        </div>
+                        <div class="detail_right">
+                            <div class="right_btn" style="margin-right:10px;">
+                                <van-image class="view" src="./img/info_view.png"></van-image>
+                                <span style="margin-left: 3px;">{{userDetail.viewsNum}}</span>
+                            </div>
+                            <div class="right_btn" @click="like" :class="{'active':flag}">
+                                <i class="iconfont icon-good_active-copy" style="font-size:16px;"></i>
+                                <span style="margin-left: 3px;">{{userDetail.likesNum}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 他的相册 -->
+            <div class="info_picUrl" @click="toPicurl">
+                <div class="picurl_left">
+                    <span>TA的相册</span>
+                    <van-image v-for="(item,index) in userDetail.picUrl" width="1.333333rem" height="1.333333rem"
+                        :src="item"></van-image>
+                </div>
+                <van-icon name="arrow"></van-icon>
+            </div>
+            <!-- 他的认证 -->
+            <div class="info_picUrl">
+                <div class="picurl_left">
+                    <span>TA的认证</span>
+                    <van-image width="1.2rem" height="1.2rem" src="./img/info_phone.png" v-if="userDetail.telephone">
+                    </van-image>
+                </div>
+            </div>
+            <!-- 作证列表 -->
+            <div class="info_cer">
+                <div class="cer_top">
+                    <div>已有 <span style="color: #FFB000;">{{relativesList.length}}</span> 亲友为TA佐证</div>
+                    <div style="color: #FFB000;" @click="cer">我也来证明</div>
+                </div>
+                <div class="cer_lsit">
+                    <div class="item" v-for="(item,index) in relativesList">
+                        <van-image width="1.36rem" height="1.413333rem" src="./img/info_head.jpg">
+                        </van-image>
+                        <div class="relation">{{item.relation}}</div>
+                    </div>
+                </div>
+            </div>
+            <!-- 个人信息 -->
+            <div class="info_list">
+                <div class="list_top">
+                    <div class="left">
+                        <van-image width=".533333rem" height=".533333rem" src="./img/info_list.png"></van-image>
+                        <span>Ta的信息</span>
+                    </div>
+                    <van-icon name="eye-o" @click="is_show=true"></van-icon>
+                </div>
+                <van-cell-group>
+                    <van-cell title="姓名" :value="userDetail.realName"></van-cell>
+                    <van-cell title="年龄" :value="userDetail.age + '岁'"></van-cell>
+                    <van-cell title="身高" :value="userDetail.heightMan + '厘米'"></van-cell>
+                    <van-cell title="手机号" value="*******" v-if="userDetail.status==1"></van-cell>
+                    <van-cell title="微信号" value="******" v-if="userDetail.status==1"></van-cell>
+                    <van-cell title="手机号" :value="userDetail.telephone" v-if="userDetail.status==0"></van-cell>
+                    <van-cell title="微信号" :value="userDetail.wechatNumber" v-if="userDetail.status==0"></van-cell>
+                    <van-cell title="学历" :value="userDetail.education"></van-cell>
+                    <van-cell title="月收入" :value="userDetail.incomeMonth"></van-cell>
+                    <van-cell title="工作地区"
+                        :value="userDetail.provinceWork + userDetail.cityWork + userDetail.areasWork "></van-cell>
+                    <van-cell title="出生地"
+                        :value="userDetail.provinceBirth + userDetail.cityBirth + userDetail.areasBirth "></van-cell>
+                </van-cell-group>
+            </div>
+        </div>
+        <!-- 申请密码 -->
+        <van-dialog class="account_dialog" v-model="is_show" :show-confirm-button="false">
+            <van-icon name="cross" @click="is_show = false"></van-icon>
+            <div class="title">亲友设置了输入密码可见，请您输入</div>
+            <van-field v-model="viewPassword" type="textarea" label="密码：" placeholder="请输入密码" rows="1" autosize>
+            </van-field>
+            <van-image width="3.12rem" height=".733333rem" style="margin:20px 0;" src="./img/info_confirm.png"
+                @click="confirm">
+            </van-image>
+            <div class="dialog_bottom"> 如不知道密码，请向推荐者索取密码，或点击 <span style="color:#FF7236;"
+                    @click="is_apply=true">申请查看</span>
+            </div>
+        </van-dialog>
+        <!-- 申请描述 -->
+        <van-dialog class="account_dialog" v-model="is_apply" title="申请描述" :show-cancel-button="true"
+            @cancel="is_apply=false" @confirm="confirmApply">
+            <van-icon name="cross" @click="is_apply = false"></van-icon>
+            <van-field style="margin-top: 40px;" v-model="remark" type="textarea" placeholder="请输入申请描述" rows="3"
+                autosize>
+            </van-field>
+        </van-dialog>
+    </div>
+    <script src="./api/axios.min.js"></script>
+    <script src="./api/index.js"></script>
+    <script src="./api/api.js"></script>
+    <script src="./config/routers.js"></script>
+    <script src="./js/info/index.js"></script>
+</body>
+
+</html>

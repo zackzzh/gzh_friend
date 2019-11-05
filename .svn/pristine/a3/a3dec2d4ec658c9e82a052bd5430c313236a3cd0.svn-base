@@ -1,0 +1,40 @@
+html {
+  align-items: center;
+  flex: 1;
+  height: 100%;
+}
+html [v-cloak] {
+  display: none;
+}
+.page {
+  padding-bottom: 1.6rem;
+  height: 100%;
+}
+.van-nav-bar__title {
+  color: #fff !important;
+}
+.van-nav-bar .van-icon {
+  color: #fff !important;
+}
+.picurl {
+  margin: 0.64rem 0.266667rem;
+}
+.picurl .picurl_item {
+  background: #ffffff;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  padding: 0.453333rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.picurl .picurl_item .van-image {
+  margin-right: 0.133333rem;
+}
+.picurl .picurl_text {
+  text-align: center;
+  margin-top: 0.733333rem;
+  font-size: 0.373333rem;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #737373;
+}

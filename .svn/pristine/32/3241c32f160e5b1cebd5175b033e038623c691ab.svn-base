@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Expires" content="0" />
+    <title>忘记密码</title>
+    <link rel="stylesheet" href="./css/change_password/index.css" />
+    <link href="./iconfont/iconfont.css" rel="stylesheet">
+    <link href='./vant/index.css' rel='stylesheet'>
+    <script src='./vue/vue.js'></script>
+    <script src='./vant/vant.min.js'></script>
+    <script src="./config/flexible.js"></script>
+</head>
+
+<body>
+    <div id="friend" class="page" v-cloak>
+        <van-nav-bar title="忘记密码" :fixed="true" left-arrow @click-left="onClickLeft"></van-nav-bar>
+        <!-- 表单提交 -->
+        <van-cell-group style="margin:0 1.186667rem;margin-top: 2.4rem;">
+            <van-field v-model="form.mobile" placeholder="请输入手机号" type="tel" clearable @blur="mobile_blur"></van-field>
+            <van-field v-model="form.msgCode" center clearable placeholder="请输入验证码">
+                <van-button slot="button" size="small" type="primary" class="button" @click="sendMsg"
+                    :disabled="sendActive">{{msgText}}</van-button>
+            </van-field>
+            <van-field v-model="form.newPassword" placeholder="请输入新密码" type="password">
+            </van-field>
+            <van-field v-model="confirmPassword" placeholder="请再次输入密码" type="password" @blur="comfirm_password_blur">
+            </van-field>
+        </van-cell-group>
+        <!-- 更改密码 -->
+        <van-image width="7.68rem" height="1.013333rem" src="./img/change_password.png"
+            style="margin-left: 1.146667rem; margin-top: 2.72rem;" @click="confirm">
+        </van-image>
+    </div>
+    <script src="./api/axios.min.js"></script>
+    <script src="./api/index.js"></script>
+    <script src="./api/api.js"></script>
+    <script src="./config/routers.js"></script>
+    <script src="./js/change_password/index.js"></script>
+</body>
+
+</html>

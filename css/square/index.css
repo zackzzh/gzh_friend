@@ -1,0 +1,200 @@
+html {
+  background: linear-gradient(180deg, rgba(255, 242, 255, 0.13), rgba(254, 233, 254, 0.13)) !important;
+  align-items: center;
+  flex: 1;
+  height: 100%;
+}
+html [v-cloak] {
+  display: none;
+}
+.page {
+  padding-bottom: 1.6rem;
+  height: 100%;
+}
+.van-nav-bar__title {
+  color: #fff !important;
+}
+.index_search {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 0.986667rem;
+  background: rgba(255, 226, 185, 0.23);
+  box-shadow: 0px 1px 2px 0px rgba(252, 169, 127, 0.34);
+  padding: 0 0.333333rem;
+}
+.index_search .van-cell {
+  background: transparent;
+}
+.index_search .van-icon-search {
+  color: #FC853E;
+  font-size: 0.533333rem !important;
+}
+.index_search .van-dropdown-menu {
+  height: 30px;
+  background: transparent;
+}
+.index_search .van-dropdown-menu__item {
+  width: 2.133333rem !important;
+  height: 0.746667rem !important;
+  border: 1px solid #ff8954;
+  border-radius: 0.373333rem !important;
+  margin-right: 0.266667rem;
+}
+.index_search .van-dropdown-menu__item .van-ellipsis {
+  font-size: 0.32rem;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #ff8954;
+}
+.index_search .van-dropdown-menu__item .van-dropdown-menu__title::after {
+  border-color: transparent transparent #ff8954 #ff8954 !important;
+}
+.index_search .filter {
+  display: flex;
+  align-items: center;
+  width: 80px;
+  font-size: 0.346667rem;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #ff8954;
+}
+.index_search .filter .van-icon-filter-o {
+  font-size: 0.453333rem;
+}
+.square_popup {
+  width: 9.466667rem;
+  border-radius: 0.266667rem;
+}
+.square_popup .popup_filter {
+  padding: 0 0.266667rem;
+}
+.square_popup .popup_filter .title {
+  font-size: 0.453333rem;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: #9a9a9a;
+  margin: 0.586667rem 0;
+}
+.square_popup .popup_filter .filter_sex .sex_item {
+  text-align: center;
+  height: 0.746667rem;
+  background: #eeeeee;
+  border-radius: 0.373333rem;
+  width: 2.666667rem;
+  line-height: 0.746667rem;
+  margin-right: 0.333333rem;
+  margin-bottom: 0.266667rem;
+  font-size: 0.373333rem;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: #919191;
+}
+.square_popup .popup_filter .filter_sex .sexActive,
+.square_popup .popup_filter .filter_sex .incomeMonthActive,
+.square_popup .popup_filter .filter_sex .educationActive,
+.square_popup .popup_filter .filter_sex .ageActive {
+  background: linear-gradient(94deg, #f6d365, #fda085);
+  box-shadow: 0px 2px 4px 0px rgba(251, 175, 124, 0.6);
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: #ffffff;
+}
+.square_popup .popup_filter .filter_sex .work {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.613333rem;
+}
+.square_popup .popup_filter .filter_sex .work .work_item {
+  padding: 0 0.266667rem;
+  height: 0.64rem;
+  line-height: 0.64rem;
+  background: #eeeeee;
+  border-radius: 0.32rem;
+  font-size: 0.32rem;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: #919191;
+}
+.square_popup .popup_filter .filter_sex .work .work_line {
+  margin: 0 0.266667rem;
+}
+.square_popup .popup_button {
+  width: 9.466667rem;
+  height: 1.413333rem;
+  border: none;
+  background: #ff8954;
+  font-size: 0.32rem;
+  color: #919191;
+  font-size: 0.453333rem;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: #fffefe;
+}
+.index_list {
+  width: 9.2rem;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 0.266667rem;
+  padding: 0.32rem;
+}
+.index_list .van-col {
+  background: #ffffff;
+  border-radius: 0.266667rem;
+  position: relative;
+  z-index: 9;
+}
+.index_list .van-col .van-image__img {
+  border-radius: 10px 10px 0px 0px;
+}
+.index_list .van-col .van_col_name {
+  position: absolute;
+  top: 2.4rem;
+  left: 0.666667rem;
+  z-index: 10;
+  color: #fff;
+  font-size: 0.386667rem;
+  font-family: PingFang SC;
+  font-weight: 500;
+}
+.index_list .van-col .van_col_buttom {
+  min-height: 1.2rem;
+  border: 1px solid #e5e5e5;
+  position: relative;
+  top: -4px;
+  text-align: center;
+  border-radius: 0px 0px 10px 10px;
+  padding: 0.333333rem 0.4rem;
+  font-size: 0.306667rem;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #a3a3a3;
+  line-height: 0.48rem;
+}
+.nav_bar {
+  position: fixed;
+  bottom: 0;
+  z-index: 100;
+}
+.nav_bar .nav_list {
+  position: absolute;
+  bottom: 3px;
+  z-index: 101;
+  display: flex;
+}
+.nav_bar .nav_list .nav_item {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+.nav_bar .nav_list .nav_item span {
+  font-size: 0.24rem;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: #fc853e;
+  opacity: 0.5;
+}
+.nav_bar .nav_list .active {
+  opacity: 1 !important;
+}

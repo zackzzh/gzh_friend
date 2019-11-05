@@ -1,0 +1,236 @@
+html {
+    background : linear-gradient(180deg, rgba(255, 242, 255, 0.13), rgba(254, 233, 254, 0.13)) !important;
+    align-items: center;
+    flex       : 1;
+    height     : 100%;
+
+    [v-cloak] {
+        display: none;
+    }
+}
+
+.page {
+    padding-bottom: 1.6rem;
+    height        : 100%;
+}
+
+.van-nav-bar__title {
+    color: #fff !important;
+}
+
+.index_search {
+    display        : flex;
+    align-items    : center;
+    justify-content: space-between;
+    height         : .986667rem;
+    background     : rgba(255, 226, 185, 0.23);
+    box-shadow     : 0px 1px 2px 0px rgba(252, 169, 127, 0.34);
+    padding        : 0 .333333rem;
+
+    .van-cell {
+        background: transparent;
+    }
+
+    .van-icon-search {
+        color    : #FC853E;
+        font-size: .533333rem !important;
+    }
+
+    .van-dropdown-menu {
+        height    : 30px;
+        background: transparent;
+    }
+
+    .van-dropdown-menu__item {
+        width        : 2.133333rem !important;
+        height       : .746667rem !important;
+        border       : 1px solid rgba(255, 137, 84, 1);
+        border-radius: .373333rem !important;
+        margin-right : .266667rem;
+
+        .van-ellipsis {
+            font-size  : .32rem;
+            font-family: PingFang SC;
+            font-weight: 500;
+            color      : rgba(255, 137, 84, 1);
+        }
+
+        .van-dropdown-menu__title::after {
+            border-color: transparent transparent rgba(255, 137, 84, 1) rgba(255, 137, 84, 1) !important;
+        }
+    }
+
+    .filter {
+        display    : flex;
+        align-items: center;
+        width      : 80px;
+        font-size  : .346667rem;
+        font-family: PingFang SC;
+        font-weight: 500;
+        color      : rgba(255, 137, 84, 1);
+
+        .van-icon-filter-o {
+            font-size: .453333rem;
+        }
+    }
+}
+
+.square_popup {
+    width        : 9.466667rem;
+    border-radius: .266667rem;
+
+    .popup_filter {
+        padding: 0 .266667rem;
+
+        .title {
+            font-size  : .453333rem;
+            font-family: PingFang SC;
+            font-weight: bold;
+            color      : rgba(154, 154, 154, 1);
+            margin     : .586667rem 0;
+        }
+
+        .filter_sex {
+            .sex_item {
+                text-align   : center;
+                height       : .746667rem;
+                background   : rgba(238, 238, 238, 1);
+                border-radius: .373333rem;
+                line-height  : .746667rem;
+                width        : 2.666667rem;
+                line-height  : 0.746667rem;
+                margin-right : .333333rem;
+                margin-bottom: .266667rem;
+                font-size    : .373333rem;
+                font-family  : PingFang SC;
+                font-weight  : bold;
+                color        : rgba(145, 145, 145, 1);
+            }
+
+            .sexActive,
+            .incomeMonthActive,
+            .educationActive,
+            .ageActive {
+                background : linear-gradient(94deg, rgba(246, 211, 101, 1), rgba(253, 160, 133, 1));
+                box-shadow : 0px 2px 4px 0px rgba(251, 175, 124, 0.6);
+                font-family: PingFang SC;
+                font-weight: bold;
+                color      : rgba(255, 255, 255, 1);
+            }
+
+            .work {
+                display      : flex;
+                align-items  : center;
+                margin-bottom: .613333rem;
+
+                .work_item {
+                    padding      : 0 .266667rem;
+                    height       : .64rem;
+                    line-height  : .64rem;
+                    background   : rgba(238, 238, 238, 1);
+                    border-radius: .32rem;
+                    font-size    : .32rem;
+                    font-family  : PingFang SC;
+                    font-weight  : bold;
+                    color        : rgba(145, 145, 145, 1);
+                }
+
+                .work_line {
+                    margin: 0 .266667rem;
+                }
+            }
+        }
+    }
+
+    .popup_button {
+        width      : 9.466667rem;
+        height     : 1.413333rem;
+        border     : none;
+        background : rgba(255, 137, 84, 1);
+        font-size  : .32rem;
+        font-family: PingFang SC;
+        font-weight: bold;
+        color      : rgba(145, 145, 145, 1);
+        font-size  : .453333rem;
+        font-family: PingFang SC;
+        font-weight: bold;
+        color      : rgba(255, 254, 254, 1);
+    }
+}
+
+.index_list {
+    width        : 9.2rem;
+    margin       : 0 auto;
+    background   : rgba(255, 255, 255, 1);
+    border-radius: .266667rem;
+    padding      : .32rem;
+
+    .van-col {
+        background   : rgba(255, 255, 255, 1);
+        border-radius: .266667rem;
+        position     : relative;
+        z-index      : 9;
+
+        .van-image__img {
+            border-radius: 10px 10px 0px 0px;
+        }
+
+        .van_col_name {
+            position   : absolute;
+            top        : 2.4rem;
+            left       : .666667rem;
+            z-index    : 10;
+            color      : #fff;
+            font-size  : .386667rem;
+            font-family: PingFang SC;
+            font-weight: 500;
+        }
+
+        .van_col_buttom {
+            min-height   : 1.2rem;
+            border       : 1px solid #e5e5e5;
+            position     : relative;
+            top          : -4px;
+            text-align   : center;
+            border-radius: 0px 0px 10px 10px;
+            padding      : .333333rem .4rem;
+            font-size    : .306667rem;
+            font-family  : PingFang SC;
+            font-weight  : 500;
+            color        : rgba(163, 163, 163, 1);
+            line-height  : .48rem;
+        }
+    }
+}
+
+.nav_bar {
+    position: fixed;
+    bottom  : 0;
+    z-index : 100;
+
+    .nav_list {
+        position: absolute;
+        bottom  : 3px;
+        z-index : 101;
+        display : flex;
+
+        .nav_item {
+            display        : flex;
+            flex-direction : column;
+            justify-content: flex-end;
+            align-items    : center;
+
+            span {
+                font-size  : .24rem;
+                font-family: PingFang SC;
+                font-weight: bold;
+                color      : rgba(252, 133, 62, 1);
+                opacity    : 0.5;
+            }
+        }
+
+        .active {
+            opacity: 1 !important;
+        }
+    }
+}

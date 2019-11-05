@@ -1,0 +1,33 @@
+html {
+  background: #F7F7F7;
+  align-items: center;
+  flex: 1;
+  height: 100%;
+  overflow: hidden !important;
+}
+html [v-cloak] {
+  display: none;
+}
+.page {
+  padding-bottom: 1.6rem;
+  height: 100%;
+}
+.van-cell {
+  padding: 0;
+  height: 1.173333rem !important;
+  background: #edf0fd !important;
+  border-radius: 0.586667rem !important;
+  margin-bottom: 0.666667rem;
+}
+.login_bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 1.186667rem;
+}
+.login_bottom span {
+  font-size: 0.32rem;
+  font-family: Source Han Sans CN;
+  font-weight: 400;
+  color: #333333;
+}

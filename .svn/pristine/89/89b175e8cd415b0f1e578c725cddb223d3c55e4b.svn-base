@@ -1,0 +1,87 @@
+html {
+    background : #F7F7F7;
+    align-items: center;
+    flex       : 1;
+    height     : 100%;
+
+    [v-cloak] {
+        display: none;
+    }
+}
+
+.page {
+    padding-bottom: 1.6rem;
+    height        : 100%;
+}
+
+.confirm-btn {
+    margin         : 0 auto;
+    display        : flex !important;
+    justify-content: center;
+    margin-top     : 50px;
+}
+
+.van-button {
+    width          : 2.533333rem;
+    height         : 1.173333rem;
+    left           : 50%;
+    transform      : translateX(-50%);
+    border-radius  : .666667rem !important;
+    position       : relative;
+    display        : flex !important;
+    justify-content: center;
+    background     : linear-gradient(to right, #F7CE69, #FCA982);
+    border         : none !important;
+    margin-top     : 30px !important;
+}
+
+.van-nav-bar__title {
+    color: #fff !important;
+}
+
+.van-cell__title {
+    flex : none !important;
+    width: 160px !important;
+}
+
+.cell-input {
+    align-items: center;
+    padding    : 0 15px !important;
+}
+
+.van-cell__value {
+    text-align: left !important;
+    color     : #333 !important;
+}
+
+.van-field {
+    padding-left: 0px !important;
+}
+
+.order_upload {
+    background   : #fff;
+    padding      : 0 .266667rem;
+    border-bottom: 1px solid #e5e5e5;
+
+    .upload_img {
+        display  : flex;
+        flex-wrap: wrap;
+
+    }
+
+    .upload_top {
+        padding    : .266667rem 0;
+        font-size  : .373333rem;
+        font-family: PingFang SC;
+        font-weight: 500;
+        color      : rgba(51, 51, 51, 1);
+
+        span {
+            font-size  : .32rem;
+            font-family: PingFang SC;
+            font-weight: bold;
+            color      : rgba(153, 153, 153, 1);
+
+        }
+    }
+}

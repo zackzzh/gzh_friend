@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Expires" content="0" />
+    <title>申请查看</title>
+    <link rel="stylesheet" href="./css/apply/index.css" />
+    <link href="./iconfont/iconfont.css" rel="stylesheet">
+    <link href='./vant/index.css' rel='stylesheet'>
+    <script src='./vue/vue.js'></script>
+    <script src='./vant/vant.min.js'></script>
+    <script src="./config/flexible.js"></script>
+</head>
+
+<body>
+    <div id="friend" class="page" v-cloak>
+        <van-nav-bar title="申请查看" :fixed="true" left-arrow @click-left="onClickLeft"
+            style="background:linear-gradient(94deg,rgba(246,211,101,1),rgba(253,160,133,1)); color:#fff;">
+        </van-nav-bar>
+        <!-- 申请列表 -->
+        <div class="apply_list" style="margin-top:56px;">
+            <div class="apply_item" v-for="(item,index) in noticeList" @click="toApplyDetail(item)">
+                <div class="left">
+                    <van-image width="1.333333rem" height="1.333333rem" round :src="item.viewUserPicHead"></van-image>
+                    <div>
+                        <div>{{item.viewUserName}}</div>
+                        <div>{{item.viewUserMobile}}</div>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="confirm" style="color:rgba(253,160,133,1);" v-if="item.status==0"
+                        @click.stop="confirm(item)">同意查看
+                    </div>
+                    <div class="ready" v-if="item.status==1">已同意</div>
+                    <div class="ready" v-if="item.status==2">不同意</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./api/axios.min.js"></script>
+    <script src="./api/index.js"></script>
+    <script src="./api/api.js"></script>
+    <script src="./config/routers.js"></script>
+    <script src="./js/apply/index.js"></script>
+</body>
+
+</html>

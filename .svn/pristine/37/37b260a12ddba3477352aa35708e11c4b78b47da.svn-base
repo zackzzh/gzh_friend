@@ -1,0 +1,67 @@
+html {
+    background : #F7F7F7;
+    align-items: center;
+    flex       : 1;
+    height     : 100%;
+
+    [v-cloak] {
+        display: none;
+    }
+}
+
+.page {
+    padding-bottom: 1.6rem;
+    height        : 100%;
+}
+
+.van-nav-bar__title {
+    color: #fff !important;
+}
+
+.van-nav-bar .van-icon {
+    color: #fff !important;
+}
+
+.release_history_select {
+    font-size    : .4rem;
+    font-family  : Source Han Sans CN;
+    font-weight  : 400;
+    color        : rgba(176, 176, 176, 1);
+    line-height  : .48rem;
+    margin-left  : .533333rem;
+    margin-bottom: .4rem;
+}
+
+.van-cell {
+    align-items: center;
+    padding    : 20px 10px !important;
+}
+
+
+.van-cell__title {
+    display    : flex !important;
+    align-items: center;
+
+    span {
+        margin-left: .4rem;
+        font-size  : .4rem;
+        font-family: Source Han Sans CN;
+        font-weight: 400;
+        color      : rgba(24, 24, 24, 1);
+    }
+
+    .option_button {
+        position: absolute;
+        bottom  : 10px;
+        right   : 43px;
+
+        .del {
+            display      : inline-block;
+            border       : 1px solid #e5e5e5;
+            padding      : 0 .266667rem;
+            border-radius: .133333rem;
+            font-size    : .32rem;
+            right        : 1.333333rem;
+        }
+    }
+}

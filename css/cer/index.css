@@ -1,0 +1,194 @@
+html {
+  background: #f7f7f7 !important;
+  align-items: center;
+  flex: 1;
+  height: 100%;
+}
+html [v-cloak] {
+  display: none;
+}
+.page {
+  padding-bottom: 1.6rem;
+  height: 100%;
+}
+.van-nav-bar__title {
+  color: #fff !important;
+}
+.van-nav-bar .van-icon {
+  color: #fff !important;
+}
+.dialg_title {
+  font-size: 0.28rem;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #999999;
+  text-align: center;
+}
+.account_dialog {
+  overflow-y: auto !important;
+}
+.account_dialog .van-button {
+  width: 2.48rem;
+  height: 1.013333rem;
+  border-radius: 0.666667rem !important;
+  position: relative;
+  background: linear-gradient(to right, #F7CE69, #FCA982);
+  border: none !important;
+}
+.account_dialog .van-button--disabled {
+  background: #ccc !important;
+}
+.filter_sex .sex_item {
+  text-align: center;
+  height: 0.746667rem;
+  background: #eeeeee;
+  border-radius: 0.373333rem;
+  line-height: 0.746667rem;
+  margin-right: 0.333333rem;
+  margin-bottom: 0.266667rem;
+  font-size: 0.373333rem;
+  width: 1.6rem;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: #919191;
+}
+.filter_sex .relationActive {
+  background: linear-gradient(94deg, #f6d365, #fda085);
+  box-shadow: 0px 2px 4px 0px rgba(251, 175, 124, 0.6);
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: #ffffff;
+}
+.dialog_score {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0.8rem;
+  margin-bottom: 0.133333rem;
+}
+.dialog_score .left {
+  font-size: 0.426667rem;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #000000;
+}
+[class*=van-hairline]::after {
+  border: none;
+}
+.confirm {
+  width: 6.253333rem !important;
+  margin-left: 1.2rem !important;
+  margin-bottom: 0.8rem !important;
+  height: 0.92rem !important;
+  line-height: 0.92rem !important;
+  background: linear-gradient(94deg, #f6d365, #fda085) !important;
+  box-shadow: 0px 3px 8px 0px rgba(190, 83, 36, 0.6) !important;
+  border-radius: 34px !important;
+  font-size: 0.373333rem;
+  font-family: Source Han Sans CN;
+  font-weight: 500;
+  color: #ffffff !important;
+}
+.van-icon-cross {
+  width: 100%;
+  text-align: right;
+  position: absolute;
+  right: 0.266667rem;
+  top: 0.266667rem;
+  font-size: 20px;
+}
+.cer .cer_score {
+  margin-bottom: 0.266667rem;
+}
+.cer .cer_score .van-cell__value {
+  color: #FF5200;
+}
+.cer .cer_score .van-cell:not(:last-child)::after {
+  border-bottom: none !important;
+}
+.cer .cer_score .score_title {
+  padding: 10px;
+  padding-top: 0px;
+  font-size: 0.32rem;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #bbbbbb;
+  background: #fff;
+}
+.cer .cer_leng {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.266667rem;
+  background: #fff;
+  margin-bottom: 0.266667rem;
+}
+.cer .cer_leng .left {
+  font-size: 0.4rem;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #141414;
+}
+.cer .cer_leng .left span {
+  color: #FF5600;
+}
+.cer .cer_leng .van-button {
+  height: 0.626667rem !important;
+  line-height: 0.626667rem !important;
+  background: linear-gradient(94deg, #f6d365, #fda085) !important;
+  box-shadow: 0px 2px 4px 0px rgba(251, 175, 124, 0.6) !important;
+  border-radius: 0.08rem !important;
+  font-size: 0.266667rem;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  color: #ffffff;
+  border: none !important;
+}
+.cer .cer_list {
+  padding: 0.533333rem 0.4rem;
+  background: #fff;
+}
+.cer .cer_list .cer_title {
+  font-size: 0.4rem;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #141414;
+  margin-bottom: 0.533333rem;
+}
+.cer .cer_list .cer_item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.266667rem;
+}
+.cer .cer_list .cer_item .right .right_one {
+  font-size: 0.4rem;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #333333;
+  margin-bottom: 0.133333rem;
+}
+.cer .cer_list .cer_item .right .right_one .relation {
+  padding: 0px 10px;
+  height: 0.4rem;
+  background: #ffa27a;
+  border-radius: 0.2rem;
+  font-size: 0.213333rem;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #ffffff;
+}
+.cer .cer_list .cer_item .right .right_two {
+  font-size: 0.266667rem;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #333333;
+  opacity: 0.5;
+  margin-bottom: 0.133333rem;
+  width: 6rem;
+}
+.cer .cer_list .cer_item .right .right_score {
+  font-size: 0.32rem;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #ff6828;
+}

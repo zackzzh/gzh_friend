@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Expires" content="0" />
+    <title>登录</title>
+    <link rel="stylesheet" href="./css/login/index.css" />
+    <link href="./iconfont/iconfont.css" rel="stylesheet">
+    <link href='./vant/index.css' rel='stylesheet'>
+    <script src='./vue/vue.js'></script>
+    <script src='./vant/vant.min.js'></script>
+    <script src="./config/flexible.js"></script>
+</head>
+
+<body>
+    <div id="friend" class="page" v-cloak>
+        <van-nav-bar title="登录" :fixed="true"></van-nav-bar>
+        <!-- 表单提交 -->
+        <van-cell-group style="margin:0 1.186667rem;margin-top:4rem;">
+            <van-field v-model="form.userName" placeholder="请输入账号" left-icon="contact"></van-field>
+            <van-field v-model="form.password" placeholder="请输入密码" type="password" clearable left-icon="edit">
+            </van-field>
+        </van-cell-group>
+        <!-- 登录 -->
+        <van-image width="7.68rem" height="1.013333rem" src="./img/login_confirm.png" style="margin-left: 1.146667rem;"
+            @click="confirm">
+        </van-image>
+        <div class="login_bottom">
+            <span @click="register">注册</span>
+            <span style="margin:.666667rem 1.6rem">|</span>
+            <span @click="change_password">忘记密码？</span>
+        </div>
+    </div>
+    <script src="./api/axios.min.js"></script>
+    <script src="./api/index.js"></script>
+    <script src="./api/api.js"></script>
+    <script src="./config/routers.js"></script>
+    <script src="./js/login/index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Expires" content="0" />
+    <title>个人信息</title>
+    <link rel="stylesheet" href="./css/apply_detail/index.css" />
+    <link href="./iconfont/iconfont.css" rel="stylesheet">
+    <link href='./vant/index.css' rel='stylesheet'>
+    <script src='./vue/vue.js'></script>
+    <script src='./vant/vant.min.js'></script>
+    <script src="./config/flexible.js"></script>
+</head>
+
+<body>
+    <div id="friend" class="page" v-cloak>
+        <van-nav-bar title="个人信息" :fixed="true" left-arrow @click-left="onClickLeft"
+            style="background:linear-gradient(94deg,rgba(246,211,101,1),rgba(253,160,133,1)); color:#fff;">
+        </van-nav-bar>
+        <van-cell-group style="margin-top:56px;">
+            <van-cell title="申请查看对象：" :value="item.realName"></van-cell>
+        </van-cell-group>
+        <div class="detail">
+            <div class="detail_title">深情描述：</div>
+            <div class="detail_info">{{item.remark}}</div>
+        </div>
+        <div class="detail_button">
+            <van-button @click="confirm" style="margin-right: 40px !important;" round v-if="item.status==0">同意</van-button>
+            <van-button @click="cancel" round v-if="item.status==0">不同意</van-button>
+        </div>
+    </div>
+    <script src="./api/axios.min.js"></script>
+    <script src="./api/index.js"></script>
+    <script src="./api/api.js"></script>
+    <script src="./config/routers.js"></script>
+    <script src="./js/apply_detail/index.js"></script>
+</body>
+
+</html>
